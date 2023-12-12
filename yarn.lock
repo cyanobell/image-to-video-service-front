@@ -1916,11 +1916,6 @@
   dependencies:
     glob "7.1.7"
 
-"@next/font@13.2.0":
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.2.0.tgz#677b3fc67243bccbae94d7d1e96a494be98206c4"
-  integrity sha512-pWoegIxqegV+9+gFmRCZao6xhA2m3kKS34lMXqShJ5ibRuyHkP/tfDE82LzYZmVQ3p51ZrkwTugNwy/ohiE2cA==
-
 "@next/swc-android-arm-eabi@13.2.0":
   version "13.2.0"
   resolved "https://registry.yarnpkg.com/@next/swc-android-arm-eabi/-/swc-android-arm-eabi-13.2.0.tgz#241d007fdb2f06f70ab21d5a333e08a29de9cd7f"
@@ -12674,6 +12669,7 @@ string-split-by@^1.0.0:
     parenthesis "^3.1.5"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -12753,6 +12749,7 @@ string_decoder@~1.1.1:
     safe-buffer "~5.1.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -13982,6 +13979,7 @@ world-calendars@^1.0.3:
     object-assign "^4.1.0"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
