@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import { useImage } from '../models/Image/index';
+import { RecoilRoot } from "recoil"
 
 const ImageUploadAndConvert: React.FC = () => {
-  const [selectedImages, setSelectedImages] = useState<{url: string, width: number, height: number}[]>([]);
-
+  const [images, addImages] = useImage();
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      Array.from(e.target.files).forEach(file => {
-        const url = URL.createObjectURL(file);
-        const img = new window.Image();
-        img.onload = () => {
-          setSelectedImages(prev => [...prev, { url, width: img.width, height: img.height }]);
-          URL.revokeObjectURL(url); // メモリリークを防ぐ
-        };
-        img.src = url;
-      });
+      addImages(Array.from(e.target.files))
     }
   };
 
@@ -28,19 +21,18 @@ const ImageUploadAndConvert: React.FC = () => {
         画像をアップロード
         <input type="file" multiple hidden onChange={handleImageChange} />
       </Button>
-      <Button variant="contained" color="primary" style={{ margin: "20px" }}>
+      <Button variant="contained" color="primary" sx={{ margin: "20px" }}>
         画像を動画に変換
       </Button>
-      <Grid container spacing={2}>
-        {selectedImages.map((image, index) => (
-          <Grid item xs={4} key={index}>
+      <Grid container spacing={1}>
+        {images.map((image, index) => (
+          <Grid item key={index} sx={{ margin: "20px", maxWidth: "100px", maxHeight: "100px" }}>
             <Image
               src={image.url}
               alt={`uploaded ${index}`}
               width={image.width}
               height={image.height}
-              max-width={300}
-              max-height={300}
+              style={{maxWidth: "100px", maxHeight: "100px"  }}
             />
           </Grid>
         ))}
@@ -49,4 +41,11 @@ const ImageUploadAndConvert: React.FC = () => {
   );
 };
 
-export default ImageUploadAndConvert;
+function App() {
+  return (
+    <RecoilRoot>
+      <ImageUploadAndConvert />
+    </RecoilRoot>
+  )
+}
+export default App;
